@@ -35,7 +35,6 @@ nav {
     background: #2456c4;
     padding: 12px;
     text-align: center;
-    color: white;
 }
 
 nav a {
@@ -124,7 +123,6 @@ footer img {
 }
 
 footer a {
-    color: white;
     text-decoration: none;
 }
 
@@ -181,15 +179,15 @@ footer a {
     }
 }
 </style></head><body><header>
-    <img src="./pic/logo.svg" alt="لوگوی باشگاه" onerror="تصویرخراب(this)">
+    <img src="pic/logo.svg" alt="لوگوی باشگاه">
     <h1>باشگاه ورزشی بابادی</h1>
-    <img src="./pic/sport/s1.svg" alt="عکس باشگاه" onerror="تصویرخراب(this)">
+    <img src="pic/sport/s1.svg" alt="عکس باشگاه">
 </header><nav>
     <a href="#" onclick="showLayer('contact'); return false">تماس با ما</a>
     |
     <a href="#" onclick="showLayer('about'); return false">درباره ما</a>
 </nav><main id="home"><div class="row">
-    <img src="./pic/sport/s2.svg" alt="عکس باشگاه" onerror="تصویرخراب(this)">
+    <img src="pic/sport/s2.svg" alt="عکس باشگاه">
 
     <div class="text">
         <h2>به باشگاه ورزشی بابادی خوش آمدید</h2>
@@ -235,7 +233,7 @@ footer a {
         </table>
     </form>
 
-    <img src="./pic/sport/s4.svg" alt="تمرین در باشگاه" onerror="تصویرخراب(this)">
+    <img src="pic/sport/s4.svg" alt="تمرین در باشگاه">
 
 </div>
 
@@ -267,11 +265,11 @@ footer a {
 </section><footer id="footer">
     <div>کلیه حقوق این سایت محفوظ می‌باشد.</div><div>
     <a href="https://eitaa.com/">
-        <img src="./pic/eitaa.svg" alt="ایتا" onerror="تصویرخراب(this)">
+        <img src="pic/eitaa.svg" alt="ایتا">
     </a>
 
     <a href="https://www.aparat.com/">
-        <img src="./pic/aparat.svg" alt="آپارات" onerror="تصویرخراب(this)">
+        <img src="pic/aparat.svg" alt="آپارات">
     </a>
 </div>
 
@@ -304,31 +302,18 @@ function showLayer(page) {
     window.scrollTo(0, 0);
 }
 
-function تصویرخراب(عکس) {
-    عکس.onerror = null;
-
-    var متن = عکس.alt || "تصویر باشگاه";
-
-    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300">' +
-        '<rect width="100%" height="100%" fill="#eeeeee"/>' +
-        '<text x="50%" y="50%" font-size="26" text-anchor="middle" fill="#2456c4">' +
-        متن +
-        '</text></svg>';
-
-    عکس.src = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
-}
-
 document.getElementById("registerForm").onsubmit = function(event) {
-
     event.preventDefault();
 
     var name = document.getElementById("name").value.trim();
     var pass = document.getElementById("pass").value;
 
-    var namePattern = /^[آ-یءئؤإأۀة‌ ]+$/;
+    var namePattern = /^[\u0621-\u064A\u066E-\u06D3\u06FA-\u06FC ]+$/;
     var passPattern = /^[0-9۰-۹]{8}$/;
 
-    if (name.length <= 2 || !namePattern.test(name)) {
+    var nameWithoutSpaces = name.replace(/ /g, "");
+
+    if (nameWithoutSpaces.length <= 2 || !namePattern.test(name)) {
         alert("نام باید بیشتر از دو حرف و فقط شامل حروف فارسی باشد.");
         return;
     }
