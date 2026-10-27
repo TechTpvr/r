@@ -1,105 +1,349 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!DOCTYPE html><html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>باشگاه ورزشی بابادی</title>
-<style>
-body{margin:0;background:white;color:black;font-family:"B Titr","B Titr Web",Tahoma,sans-serif}
-header{background:gray;color:white;padding:15px;display:flex;align-items:center;justify-content:space-between;text-align:center}
-header img{width:100px;height:80px;object-fit:cover;border-radius:20px}
-header h1{font-size:26px}
-nav{background:#2456c4;padding:12px;text-align:center;color:white}
-nav a{color:white;text-decoration:none;margin:0 15px}
-main{padding:20px}
-.row{display:flex;align-items:center;gap:25px;margin:15px auto 25px;max-width:1100px}
-.row img{width:45%;height:230px;object-fit:cover;border-radius:20px}
-.text{width:55%;line-height:2;font-size:18px}
-h2{font-size:22px}
-form{width:55%}
-table{width:100%;border-collapse:collapse;background:#f5f5f5}
-td{border:1px solid gray;padding:8px}
-input{width:95%;padding:8px;font-family:inherit;font-size:16px}
-input[type=submit],input[type=reset]{width:auto;padding:8px 18px;cursor:pointer}
-footer{background:#2456c4;color:white;padding:15px 25px;display:flex;align-items:center;justify-content:space-between}
-footer img{width:38px;height:38px;margin-right:8px}
-footer a{color:white;text-decoration:none}
-.layer{position:fixed;top:0;right:0;width:100%;height:100%;background:white;z-index:5;padding:35px;box-sizing:border-box;text-align:center;line-height:2;overflow:auto}
-.layer h2{margin-top:40px}
-.layer a{display:block;color:#2456c4;font-size:22px}
-.layer button{font-family:inherit;padding:8px 20px;cursor:pointer}
-[hidden]{display:none!important}
-@media(max-width:700px){header img{width:60px;height:60px}header h1{font-size:17px}.row{flex-direction:column}.row img,.text,form{width:100%}.row img{height:200px}footer{flex-direction:column;gap:12px;text-align:center}}
-</style>
-</head>
-<body>
-<header>
-<img src="pic/logo.svg" alt="لوگوی باشگاه">
-<h1>باشگاه ورزشی بابادی</h1>
-<img src="pic/sport/s1.svg" alt="عکس باشگاه">
-</header>
-<nav>
-<a href="#" onclick="showLayer('contact');return false">تماس با ما</a> |
-<a href="#" onclick="showLayer('about');return false">درباره ما</a>
-</nav>
-<main id="home">
-<div class="row">
-<img src="pic/sport/s2.svg" alt="عکس باشگاه">
-<div class="text"><h2>به باشگاه ورزشی بابادی خوش آمدید</h2>
-<p>ورزش منظم به حفظ سلامتی، افزایش انرژی و بهتر شدن آمادگی جسمانی کمک می‌کند. در باشگاه بابادی می‌توانید در محیطی مناسب تمرین کنید و برای رسیدن به تناسب اندام تلاش کنید.</p></div>
+<title>باشگاه ورزشی بابادی</title><style>
+body {
+    margin: 0;
+    background: white;
+    color: black;
+    font-family: "B Titr", Tahoma, sans-serif;
+}
+
+header {
+    background: gray;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+header h1 {
+    font-size: 26px;
+}
+
+nav {
+    background: #2456c4;
+    padding: 12px;
+    text-align: center;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 15px auto 25px;
+    max-width: 1100px;
+}
+
+.row img {
+    width: 45%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.text {
+    width: 55%;
+    line-height: 2;
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+form {
+    width: 55%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f5f5f5;
+}
+
+td {
+    border: 1px solid gray;
+    padding: 8px;
+}
+
+input {
+    width: 95%;
+    padding: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+input[type=submit], input[type=reset] {
+    width: auto;
+    padding: 8px 18px;
+    cursor: pointer;
+}
+
+button {
+    padding: 8px 20px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+footer {
+    background: #2456c4;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer img {
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.layer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    background: white;
+    text-align: center;
+    line-height: 2;
+}
+
+.layer a {
+    display: block;
+    color: #2456c4;
+    font-size: 22px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media(max-width:700px) {
+    header img {
+        width: 60px;
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 17px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .row img, .text, form {
+        width: 100%;
+    }
+
+    .row img {
+        height: 200px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}
+</style></head><body><header>
+    <img src="./pic/logo.svg" alt="لوگوی باشگاه" onerror="تصویرخراب(this)">
+    <h1>باشگاه ورزشی بابادی</h1>
+    <img src="./pic/sport/s1.svg" alt="عکس باشگاه" onerror="تصویرخراب(this)">
+</header><nav>
+    <a href="#" onclick="showLayer('contact'); return false">تماس با ما</a>
+    |
+    <a href="#" onclick="showLayer('about'); return false">درباره ما</a>
+</nav><main id="home"><div class="row">
+    <img src="./pic/sport/s2.svg" alt="عکس باشگاه" onerror="تصویرخراب(this)">
+
+    <div class="text">
+        <h2>به باشگاه ورزشی بابادی خوش آمدید</h2>
+
+        <p>
+            ورزش منظم به حفظ سلامتی، افزایش انرژی و بهتر شدن
+            آمادگی جسمانی کمک می‌کند. در باشگاه بابادی می‌توانید
+            در محیطی مناسب تمرین کنید و برای رسیدن به تناسب اندام تلاش کنید.
+        </p>
+    </div>
 </div>
+
 <div class="row">
-<form id="signup">
-<h2>فرم ثبت نام</h2>
-<table>
-<tr><td><label for="name">نام</label></td><td><input id="name" type="text" autocomplete="name" required pattern="[آ-یءئؤإأۀة‌ ]{3,}" title="نام باید فقط فارسی و بیشتر از دو حرف باشد."></td></tr>
-<tr><td><label for="pass">کلمه عبور</label></td><td><input id="pass" type="password" inputmode="numeric" required pattern="[0-9۰-۹]{8}" maxlength="8" title="رمز باید دقیقاً ۸ رقم باشد."></td></tr>
-<tr><td colspan="2" style="text-align:center"><input type="submit" value="ثبت نام"> <input type="reset" value="پاک کردن"></td></tr>
-</table>
-</form>
-<img src="pic/sport/s4.svg" alt="تمرین در باشگاه">
+
+    <form id="registerForm">
+        <h2>فرم ثبت نام</h2>
+
+        <table>
+            <tr>
+                <td>
+                    <label for="name">نام</label>
+                </td>
+                <td>
+                    <input id="name" type="text" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="pass">کلمه عبور</label>
+                </td>
+                <td>
+                    <input id="pass" type="password" required maxlength="8">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <input type="submit" value="ثبت نام">
+                    <input type="reset" value="پاک کردن">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <img src="./pic/sport/s4.svg" alt="تمرین در باشگاه" onerror="تصویرخراب(this)">
+
 </div>
-</main>
-<section class="layer" id="contact" hidden>
-<h2>تماس با ما</h2>
-<a href="tel:09924523979">09924523979</a>
+
+</main><section class="layer" id="contact" hidden>
+    <h2>تماس با ما</h2><a href="tel:09924523979">09924523979</a>
 <a href="tel:09981842307">09981842307</a>
 <a href="tel:0139859726">0139859726</a>
+
 <p>با مدیریت اصغر بابایی</p>
+
 <button onclick="showLayer('home')">بازگشت</button>
-</section>
-<section class="layer" id="about" hidden>
-<h2>درباره ما</h2>
-<p>باشگاه ورزشی بابادی فضایی برای ورزش، تمرین و افزایش آمادگی جسمانی است. هدف ما فراهم کردن محیطی مناسب برای فعالیت بدنی، تقویت عضلات و کمک به داشتن سبک زندگی سالم‌تر است.</p>
+
+</section><section class="layer" id="about" hidden>
+    <h2>درباره ما</h2><p>
+    باشگاه ورزشی بابادی فضایی برای ورزش، تمرین و افزایش آمادگی
+    جسمانی است. هدف باشگاه فراهم کردن محیطی مناسب برای فعالیت
+    بدنی، تقویت عضلات و کمک به داشتن سبک زندگی سالم‌تر است.
+</p>
+
 <button onclick="showLayer('home')">بازگشت</button>
-</section>
-<section class="layer" id="success" hidden>
-<h2>ثبت نام شما تکمیل شد!</h2>
-<p>شماره ثبت: <strong id="regnum"></strong></p>
+
+</section><section class="layer" id="success" hidden>
+    <h2>ثبت نام شما تکمیل شد!</h2><p>شماره ثبت: <span id="registerNumber"></span></p>
+
 <p>جهت استعلام ثبت نام به شماره زیر زنگ بزنید.</p>
+
 <a href="tel:09924523979">09924523979</a>
-</section>
-<footer>
-<div>حقوق این سایت برای باشگاه بابادی است.</div>
-<div><a href="https://eitaa.com/"><img src="pic/eitaa.svg" alt="ایتا"></a>
-<a href="https://www.aparat.com/"><img src="pic/aparat.svg" alt="آپارات"></a></div>
-</footer>
-<script>
-function showLayer(page){
-document.getElementById("home").hidden = page != "home";
-document.getElementById("contact").hidden = page != "contact";
-document.getElementById("about").hidden = page != "about";
-document.getElementById("success").hidden = page != "success";
-window.scrollTo(0,0);
+
+</section><footer id="footer">
+    <div>کلیه حقوق این سایت محفوظ می‌باشد.</div><div>
+    <a href="https://eitaa.com/">
+        <img src="./pic/eitaa.svg" alt="ایتا" onerror="تصویرخراب(this)">
+    </a>
+
+    <a href="https://www.aparat.com/">
+        <img src="./pic/aparat.svg" alt="آپارات" onerror="تصویرخراب(this)">
+    </a>
+</div>
+
+</footer><script>
+
+function showLayer(page) {
+    document.getElementById("home").hidden = true;
+    document.getElementById("contact").hidden = true;
+    document.getElementById("about").hidden = true;
+    document.getElementById("success").hidden = true;
+    document.getElementById("footer").hidden = true;
+
+    if (page == "home") {
+        document.getElementById("home").hidden = false;
+        document.getElementById("footer").hidden = false;
+    }
+
+    if (page == "contact") {
+        document.getElementById("contact").hidden = false;
+    }
+
+    if (page == "about") {
+        document.getElementById("about").hidden = false;
+    }
+
+    if (page == "success") {
+        document.getElementById("success").hidden = false;
+    }
+
+    window.scrollTo(0, 0);
 }
-document.getElementById("signup").onsubmit=function(event){
-event.preventDefault();
-if(!this.checkValidity()){this.reportValidity();return;}
-document.getElementById("regnum").textContent=String(Math.floor(1000000+Math.random()*9000000));
-showLayer("success");
+
+function تصویرخراب(عکس) {
+    عکس.onerror = null;
+
+    var متن = عکس.alt || "تصویر باشگاه";
+
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300">' +
+        '<rect width="100%" height="100%" fill="#eeeeee"/>' +
+        '<text x="50%" y="50%" font-size="26" text-anchor="middle" fill="#2456c4">' +
+        متن +
+        '</text></svg>';
+
+    عکس.src = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+}
+
+document.getElementById("registerForm").onsubmit = function(event) {
+
+    event.preventDefault();
+
+    var name = document.getElementById("name").value.trim();
+    var pass = document.getElementById("pass").value;
+
+    var namePattern = /^[آ-یءئؤإأۀة‌ ]+$/;
+    var passPattern = /^[0-9۰-۹]{8}$/;
+
+    if (name.length <= 2 || !namePattern.test(name)) {
+        alert("نام باید بیشتر از دو حرف و فقط شامل حروف فارسی باشد.");
+        return;
+    }
+
+    if (!passPattern.test(pass)) {
+        alert("کلمه عبور باید دقیقاً ۸ رقم باشد.");
+        return;
+    }
+
+    var number = Math.floor(1000000 + Math.random() * 9000000);
+
+    document.getElementById("registerNumber").innerText = number;
+
+    showLayer("success");
 };
-document.getElementById("name").oninput=function(){this.setCustomValidity("");};
-document.getElementById("pass").oninput=function(){this.setCustomValidity("");};
-</script>
-</body>
+
+</script></body>
 </html>
